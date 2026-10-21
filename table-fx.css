@@ -1,0 +1,305 @@
+/* 此样式只负责扇面、动画克隆和真卡翻转，业务按钮由应用管理。 */
+#fx-layer {
+  position:fixed;
+  inset:0;
+  z-index:150;
+  pointer-events:none;
+  overflow:clip;
+}
+.table-fx-flight {
+  position:absolute;
+  transform-origin:center;
+  border-radius:17px;
+  background:#1b222a;
+  box-shadow:0 14px 36px #0006;
+  pointer-events:none;
+  will-change:transform,opacity;
+}
+.table-fx-flight > .card-back-art,
+.table-fx-back,
+.table-fx-back > .card-back-art {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border-radius:inherit;
+}
+.table-fx-flight .card-back-art svg {
+  width:100%;
+  height:100%;
+  display:block;
+}
+.table-fx-source-back .card-back-name {
+  display:none;
+}
+.table-fx-snapshot > .card-face {
+  width:100%;
+  height:100%;
+  min-height:0;
+  box-sizing:border-box;
+}
+.table-fan {
+  position:relative;
+  display:block;
+  text-align:center;
+  width:min(100%,560px);
+  max-width:100%;
+  min-height:120px;
+  margin:0 auto;
+  padding:0;
+  border:0;
+  border-radius:16px;
+  background:transparent;
+  overflow:visible;
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
+  outline-offset:8px;
+  -webkit-touch-callout:none;
+}
+.table-fan .fan-card,
+.table-fan .fan-hole,
+.table-fan .fan-latent {
+  position:absolute;
+  display:block;
+  width:var(--fan-card-width,64px);
+  height:var(--fan-card-height,91px);
+  min-width:0;
+  min-height:0;
+  margin:0;
+  padding:0;
+  border:1px solid #ffffff24;
+  border-radius:6px;
+  background:#222631;
+  box-shadow:0 5px 15px #0005;
+  transform:rotate(var(--fan-angle,0deg)) scale(var(--wheel-scale,1));
+  transform-origin:center;
+  transition:box-shadow .15s ease-out,border-color .15s ease-out;
+  animation:none;
+  cursor:pointer;
+  overflow:hidden;
+  touch-action:pan-y;
+  -webkit-touch-callout:none;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.table-fan .fan-hole {
+  border:1px dashed #d9ba832b;
+  background:transparent;
+  box-shadow:none;
+  pointer-events:none;
+}
+.table-fan .fan-latent {opacity:.42;pointer-events:none;cursor:default}
+/* 旧 styles.css 里的牌号伪元素也必须屏蔽。 */
+.fan-card::after,
+.fan-hole::after,
+.fan-latent::after {content:none!important;display:none!important}
+.table-fan .fan-card .card-back-name,
+.table-fan .fan-latent .card-back-name {
+  display:none;
+}
+.table-fan .fan-card:hover,
+.table-fan .fan-card:focus-visible {
+  transform:translateY(-8px) rotate(var(--fan-angle,0deg)) scale(var(--wheel-scale,1));
+  z-index:1500!important;
+  border-color:#e5caa57a;
+}
+.table-fan .fan-card.is-selected {
+  border-color:#f4d99c;
+  box-shadow:0 0 0 1px #f0d29ac0,0 0 18px #e9c68b77,0 6px 18px #0005;
+  transform:rotate(var(--fan-angle,0deg)) scale(var(--wheel-scale,1));
+  z-index:2000!important;
+}
+.table-fan.fx-preparing,
+.table-fan[aria-disabled="true"] {
+  pointer-events:none;
+}
+.table-fan[aria-disabled="true"] {
+  opacity:.45;
+}
+.table-fan.holding .fan-card.is-selected {
+  animation:table-fan-tremble .16s ease-in-out infinite alternate;
+}
+.fan-hold-arc {
+  display:block;
+  width:min(100%,330px);
+  height:34px;
+  margin:3px auto 0;
+  overflow:visible;
+  pointer-events:none;
+}
+.fan-hold-arc path {
+  fill:none;
+  stroke:#e4cfa026;
+  stroke-width:2;
+  stroke-linecap:round;
+}
+.fan-hold-arc .fan-hold-progress {
+  stroke:#d9ba83;
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+}
+.table-big-card,
+.table-big-card.revealed,
+.table-big-card.pending,
+.table-big-card.fx-flipping {
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  overflow:visible;
+  transition:none;
+  animation:none;
+  transition-delay:0s;
+}
+.table-big-card {
+  transform:rotateY(180deg);
+}
+.table-big-card.revealed {
+  transform:rotateY(0deg);
+  box-shadow:0 0 24px #d9ba8326;
+  box-shadow:0 0 26px color-mix(in srgb,var(--series-color,#d9ba83) 24%,transparent);
+}
+.table-big-card .card-face,
+.table-big-card .card-reverse {
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+.table-big-card.table-deep-wait {
+  animation:table-deep-hover 1.8s ease-in-out infinite;
+}
+.talked-pile {
+  position:relative;
+  width:48px;
+  height:69px;
+  flex-shrink:0;
+  border-radius:6px;
+  background:#263029;
+  border:1px solid #d9ba8340;
+  box-shadow:2px 3px 0 #263029,3px 4px 0 #d9ba8330,5px 6px 0 #202720;
+}
+.talked-pile .card-back-art,
+.talked-pile .card-back-art svg {
+  width:100%;
+  height:100%;
+}
+.talked-pile .card-back-name {
+  display:none;
+}
+.talked-pile-count {
+  position:absolute;
+  right:-7px;
+  top:-7px;
+  min-width:20px;
+  height:20px;
+  padding:0 4px;
+  border-radius:12px;
+  background:#e4cda5;
+  color:#242a25;
+  font-size:10px;
+  line-height:20px;
+  text-align:center;
+}
+.projection .table-fan {
+  width:min(100%,680px);
+}
+@keyframes table-fan-tremble {
+  from {transform:translateX(-.8px) rotate(calc(var(--fan-angle,0deg) - .35deg)) scale(var(--wheel-scale,1))}
+  to {transform:translateX(.8px) rotate(calc(var(--fan-angle,0deg) + .35deg)) scale(var(--wheel-scale,1))}
+}
+@keyframes table-deep-hover {
+  0%,100% {transform:rotateY(180deg) translateY(0);box-shadow:0 0 16px #d9ba8312}
+  50% {transform:rotateY(180deg) translateY(-4px);box-shadow:0 0 30px #d9ba8330}
+}
+@media(prefers-reduced-motion:reduce) {
+  .table-fan.holding .fan-card.is-selected,
+  .table-big-card.table-deep-wait {
+    animation:none!important;
+  }
+  .table-fan .fan-card {
+    transition:none!important;
+  }
+  .table-big-card,
+  .table-big-card.revealed {
+    transform:none!important;
+  }
+  .table-big-card:not(.revealed) .card-face {
+    visibility:hidden;
+  }
+  .table-big-card:not(.revealed) .card-reverse {
+    transform:none;
+    visibility:visible;
+  }
+  .table-big-card.revealed .card-face {
+    visibility:visible;
+  }
+  .table-big-card.revealed .card-reverse {
+    visibility:hidden;
+  }
+}
+
+/* 桌面布局保持 3D 祖先可见，卡片长文自然增长。 */
+.toggle-row label {min-height:44px;display:flex;flex-direction:column;justify-content:center}
+.table-stage {position:relative;min-height:310px;padding:14px 0;perspective:1400px}
+.table-card-slot {display:flex;justify-content:center;position:relative;z-index:2}
+.table-card-slot:empty {display:none}
+.table-card-slot .conversation-card {width:min(100%,460px)}
+.table-card-slot .conversation-card.pending {min-height:398px}
+.table-stage > .talked-pile {position:absolute;right:8px;top:15px;z-index:4;width:62px;height:91px}
+#pile-back {width:100%;height:100%;border-radius:6px;overflow:hidden}
+#talked-count {position:absolute;white-space:nowrap;right:0;top:calc(100% + 8px);font-size:10px;color:var(--accent)}
+.fan-rail {position:relative;margin:35px auto 0;max-width:100%;padding:0 12px}
+.table-card-slot:empty ~ .fan-rail {padding-top:75px;margin-top:0}
+.fan-caption {text-align:center;color:var(--muted);font-size:11px;margin-top:5px}
+.fan-extra {position:absolute;right:0;top:72px;width:35px;height:44px;display:grid;place-items:center;background:#33352e;border:1px solid #dabd8d44;border-radius:5px;box-shadow:3px 2px 0 #252e2a,5px 4px 0 #dabd8d25;font-size:11px}
+.fan-hold-line {display:block;width:min(100%,300px);height:30px;margin:0 auto;pointer-events:none}
+.fan-hold-line path {fill:none;stroke:#dabd8d33;stroke-width:2;stroke-linecap:round}
+.fan-hold-line .fan-hold-progress {stroke:#e3c18a;stroke-dasharray:1;stroke-dashoffset:1}
+.table-fan.single-ritual {height:340px!important;min-height:340px}
+.table-fan.single-ritual .fan-card {width:240px;height:340px;left:calc(50% - 120px)!important;top:0!important;--fan-angle:0deg!important;border-radius:17px}
+.table-card-slot:not(:empty) ~ .fan-rail:has(.single-ritual) {display:none}
+.projection .table-card-slot .conversation-card {width:min(100%,720px)}
+.projection .table-fan.single-ritual {height:398px!important;min-height:398px}
+.projection .table-fan.single-ritual .fan-card {width:280px;height:398px;left:calc(50% - 140px)!important}
+#ending-light {position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 20%,#66534266,transparent 75%),#3a352d}
+body.ending-warm {background:#3a352d}
+body:has(#ending-light) > .site-header,body:has(#ending-light) > #app,body:has(#ending-light) > .site-footer {position:relative;z-index:1}
+#round-memory-transition {position:fixed;left:0;width:100%;z-index:151;pointer-events:none}
+.round-memory-row {position:relative;margin:0 auto;height:91px;max-width:100%}
+.round-memory-row .memory-card {position:absolute;top:0;width:62px;height:91px;animation:none!important}
+.round-ending {animation:none!important;padding-top:35px}
+.round-ending .round-memory-row {margin-bottom:24px}
+.round-ending .eyebrow {margin-top:0}
+.round-ending h1 {overflow-wrap:anywhere}
+@media(max-width:650px) {
+  .table-card-slot:not(:empty) {margin-top:8px}
+  .table-card-slot .conversation-card {width:100%}
+  .table-stage > .talked-pile {right:4px;top:0;width:40px;height:58px}
+  #talked-count {font-size:9px;top:calc(100% + 4px)}
+  .table-stage {padding-top:71px}
+  .table-card-slot:empty ~ .fan-rail {padding-top:35px}
+  .fan-rail {padding:0;margin-top:20px}
+  .fan-extra {right:0;top:100px}
+  .round-ending h1 {font-size:25px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .round-ending,.round-memory-row .memory-card {animation:none!important}
+}
+/* 翻开后把操作放到卡片下方；扇面节点仍保留供回牌动画测量。 */
+.table-stage:has(.table-big-card.revealed) .fan-rail {display:none}
+.table-card-slot:empty ~ .fan-rail:has(.single-ritual) {padding-top:0}
+
+/* 牌轮只在自身视口内横滚，轨道与空槽的位置始终保留。 */
+.fan-wheel-wrap {display:flex;align-items:center;gap:6px;width:100%;max-width:560px;min-width:0;margin:0 auto}
+.projection .fan-wheel-wrap {max-width:680px}
+.fan-wheel-viewport {flex:1 1 0%;min-width:0;max-width:100%;padding:16px 0 12px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-y;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none;scroll-behavior:auto}
+.fan-wheel-viewport::-webkit-scrollbar {display:none}
+.fan-wheel-viewport:not(.is-wheel) {overflow-x:hidden}
+.fan-wheel-viewport.is-wheel,
+.table-fx-wheel-clip.is-wheel {-webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent)}
+.fan-wheel-viewport > .table-fan {max-width:none;margin:0;touch-action:pan-y}
+.fan-wheel-wrap [data-fan-direction] {flex:0 0 44px;min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:8px;color:var(--accent);background:#202829;cursor:pointer;padding:0;font-size:21px}
+.fan-wheel-wrap [data-fan-direction]:disabled {opacity:.35;cursor:default}
+.fan-wheel-wrap:not(.is-wheel) [data-fan-direction] {display:none}
+.fan-wheel-wrap.is-exhausted {display:none}
+.table-fx-wheel-clip {position:absolute;overflow:hidden;pointer-events:none;z-index:0}
+.table-fan.single-ritual .fan-hole {display:none}
+.table-stage:has(.table-big-card.revealed) .fan-rail:has(.fan-wheel-wrap):not(:has(.single-ritual)) {display:block}

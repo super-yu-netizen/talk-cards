@@ -1,0 +1,162 @@
+[
+ {
+  "key": "weather",
+  "zh": "情绪天气",
+  "en": "Mood",
+  "desc": "觉察此刻的情绪",
+  "color": "#6FA8DC",
+  "color2": "#DCEBFA",
+  "motif": "云、雨滴、阳光线条",
+  "codes": [
+   "天气"
+  ],
+  "count": 12
+ },
+ {
+  "key": "imagination",
+  "zh": "脑洞狂欢",
+  "en": "Imagination",
+  "desc": "荒诞假设里的真实偏好",
+  "color": "#9B6BDF",
+  "color2": "#EDE3FB",
+  "motif": "星星、气泡、螺旋",
+  "codes": [
+   "脑洞"
+  ],
+  "count": 14
+ },
+ {
+  "key": "action",
+  "zh": "此刻任务",
+  "en": "Action",
+  "desc": "不问问题，直接做一件事（多用手机）",
+  "color": "#F28C38",
+  "color2": "#FDE8D6",
+  "motif": "手机轮廓、箭头、圆点",
+  "codes": [
+   "任务"
+  ],
+  "count": 12
+ },
+ {
+  "key": "story",
+  "zh": "故事胶囊",
+  "en": "Story",
+  "desc": "用一样东西打开一段记忆",
+  "color": "#D9A441",
+  "color2": "#F8EDD3",
+  "motif": "胶囊、钥匙",
+  "codes": [
+   "故事"
+  ],
+  "count": 21
+ },
+ {
+  "key": "train",
+  "zh": "生命列车",
+  "en": "The Train of Life",
+  "desc": "一生的来处和去处",
+  "color": "#2A9D8F",
+  "color2": "#D7F0EC",
+  "motif": "铁轨、站牌、圆形车窗",
+  "codes": [
+   "列车"
+  ],
+  "count": 21
+ },
+ {
+  "key": "future",
+  "zh": "未来信箱",
+  "en": "Future",
+  "desc": "寄给未来的信",
+  "color": "#4A5BD4",
+  "color2": "#E0E4FA",
+  "motif": "信封、邮戳、星点",
+  "codes": [
+   "未来"
+  ],
+  "count": 12
+ },
+ {
+  "key": "views",
+  "zh": "三观蹦迪",
+  "en": "Views",
+  "desc": "极端情境里的价值抉择",
+  "color": "#E4572E",
+  "color2": "#FBE0D8",
+  "motif": "天平、分叉路、滑杆",
+  "codes": [
+   "三观",
+   "三观深"
+  ],
+  "count": 24
+ },
+ {
+  "key": "mirror",
+  "zh": "你我镜像",
+  "en": "Mirror",
+  "desc": "借别人的眼睛看自己",
+  "color": "#8E9AAF",
+  "color2": "#E9ECF2",
+  "motif": "镜面反光、对称图形",
+  "codes": [
+   "镜像",
+   "镜像深"
+  ],
+  "count": 24
+ },
+ {
+  "key": "shadow",
+  "zh": "暗房显影",
+  "en": "Shadow",
+  "desc": "看见不愿承认的自己",
+  "color": "#8B1E3F",
+  "color2": "#2A0E17",
+  "motif": "暗房红灯、胶片齿孔",
+  "codes": [
+   "暗房",
+   "暗房深"
+  ],
+  "count": 24
+ },
+ {
+  "key": "money",
+  "zh": "钱包开麦",
+  "en": "Money",
+  "desc": "钱、工作与安全感",
+  "color": "#3C9D5D",
+  "color2": "#DCF1E2",
+  "motif": "硬币、钱包线条",
+  "codes": [
+   "钱包"
+  ],
+  "count": 21
+ },
+ {
+  "key": "checkup",
+  "zh": "恋爱体检",
+  "en": "Us",
+  "desc": "给关系做一次体检（伴侣专用）",
+  "color": "#58C4B0",
+  "color2": "#DDF4EF",
+  "motif": "心电图线、听诊器",
+  "codes": [
+   "体检"
+  ],
+  "count": 12
+ },
+ {
+  "key": "intimacy",
+  "zh": "亲密开麦",
+  "en": "Grown-up",
+  "desc": "身体与欲望（以伴侣为主）",
+  "color": "#E26D8C",
+  "color2": "#FBE1E8",
+  "motif": "火焰、柔和曲线",
+  "codes": [
+   "开麦",
+   "开麦深"
+  ],
+  "count": 33
+ }
+]

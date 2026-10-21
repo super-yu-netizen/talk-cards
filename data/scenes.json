@@ -1,0 +1,969 @@
+{
+  "version": "2026-10-16-v2",
+  "levels": {
+    "star": {
+      "1": "轻松，谁都能答",
+      "2": "要想一想，会暴露偏好",
+      "3": "触及痛处、底线或隐私",
+      "4": "说出从没说出口的，需要很高的信任",
+      "5": "直视一直绕开的问题，答完看自己的方式可能会变"
+    },
+    "spice": {
+      "1": "好感与亲密的轻话题",
+      "2": "身体感受、经历与边界（全员同意）",
+      "3": "偏好与欲望：朋友插件或心动局按关系选题",
+      "4": "幻想与秘密：全员同意后逐卡确认",
+      "5": "脆弱的真相：全员同意后逐卡确认，只听不辩解"
+    }
+  },
+  "rules": [
+    "可以按现场意愿点击阶段标签跳转，不必按顺序或把牌池抽完；需要全员同意的阶段仍要先确认",
+    "认识一下和标有“所有人都答”的卡依次回答，其余的卡轮流抽",
+    "每人每局有 2 次“过”，不用解释原因",
+    "三观卡大家同时亮态度，少数派先说",
+    "听的人不打断、不评判；四星以上的卡，答完之后先说一句“谢谢你告诉我”",
+    "四星、四辣及以上的卡要全员同意才翻开；五星卡一晚建议抽 1–2 张，什么时候进入由大家决定",
+    "结束前留一句轻一点的话，看见彼此；不必把所有阶段玩完",
+    "亲密题只在全员同意后加入：朋友局插件聊各自经历和想法，心动局按暧昧或恋人关系选题；四辣、五辣仍需逐卡确认"
+  ],
+  "deckModes": {
+    "curated": {
+      "name": "精选",
+      "desc": "推荐一局：按新流程精选，每个可抽阶段为建议抽数留出至少一倍备用；建议数是节奏参考，不要求抽完"
+    },
+    "fullBox": {
+      "name": "整盒",
+      "desc": "同一流程的更多备选卡，适合反复玩；一晚抽数仍按阶段建议，不要求抽完整盒"
+    }
+  },
+  "scenes": [
+    {
+      "id": "strangers",
+      "name": "初识局",
+      "nameEn": "First Meet",
+      "for": "陌生或半熟的人，线上线下都可以：新同事、社群活动、朋友的朋友",
+      "players": "4–10",
+      "duration": "45–60 分钟",
+      "levelText": "★ – ★★★",
+      "playNotes": [
+        "先认识一下，再直接破冰，不单独聊天气",
+        "主流程建议抽 10–13 张：认识一下 1 张、破冰 3–4 张、展开 5–7 张、收尾 1 张",
+        "可以按现场节奏点击阶段标签跳转；不必把一个阶段抽完",
+        "认识一下和收尾所有人都答，其余轮流抽"
+      ],
+      "notIncluded": [
+        "暗房显影：留给更熟悉的人",
+        "亲密开麦、恋爱体检：这个场景不加入",
+        "钱包开麦：本轮初识牌池不安排钱题",
+        "生命列车里涉及生死、葬礼的题：不放入初识牌池"
+      ],
+      "onlineTips": [
+        "认识一下之前，先请大家把昵称改成真名或常用名",
+        "“右手边/左手边的人”换成“参会名单里你的下一位”",
+        "此刻任务的照片、截图发到群里或共享屏幕；歌放 30 秒，用共享音频或直接发链接",
+        "时长缩短到 40–45 分钟，每人每次 2 分钟以内"
+      ],
+      "hints": [
+        {
+          "match": [
+            "右手边",
+            "左手边"
+          ],
+          "hint": "线上：指参会名单里你的下一位",
+          "onlineOnly": true
+        },
+        {
+          "series": "action",
+          "hint": "线上：照片、截图发到群里或共享屏幕；歌可以共享音频或发链接",
+          "onlineOnly": true
+        }
+      ],
+      "closingText": "谢谢今晚的分享，很高兴认识你们。",
+      "modes": [
+        {
+          "id": "standard",
+          "name": "标准",
+          "desc": "",
+          "stages": [
+            {
+              "id": "names",
+              "name": "认识一下",
+              "howTo": "每人先说自己的名字，再回答抽到的卡；一人一句",
+              "minutes": "5 分钟",
+              "draw": "random",
+              "everyoneAnswers": true,
+              "maxDraws": 1,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "train-01",
+                "action-01"
+              ],
+              "extraCards": []
+            },
+            {
+              "id": "icebreak",
+              "name": "破冰",
+              "howTo": "轮流抽，先从轻松的脑洞和经历聊起",
+              "minutes": "10–15 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "imagination-01",
+                "imagination-02",
+                "imagination-04",
+                "imagination-06",
+                "imagination-07",
+                "story-02",
+                "story-03",
+                "train-04"
+              ],
+              "extraCards": [
+                "imagination-03",
+                "imagination-05",
+                "action-11"
+              ]
+            },
+            {
+              "id": "open-up",
+              "name": "展开",
+              "howTo": "轮流抽，聊一段经历、此刻的选择或未来的自己",
+              "minutes": "25–30 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "story-01",
+                "story-04",
+                "story-05",
+                "story-06",
+                "story-07",
+                "story-08",
+                "story-09",
+                "action-03",
+                "action-04",
+                "action-12",
+                "future-01",
+                "future-02",
+                "future-03",
+                "future-04"
+              ],
+              "extraCards": [
+                "train-02",
+                "train-06",
+                "train-07",
+                "imagination-10",
+                "imagination-11",
+                "imagination-12",
+                "imagination-13"
+              ]
+            },
+            {
+              "id": "closing",
+              "name": "收尾",
+              "howTo": "选一张，所有人都答，把刚认识的彼此留在心里",
+              "minutes": "5–10 分钟",
+              "draw": "pick",
+              "everyoneAnswers": true,
+              "maxDraws": 1,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "mirror-03",
+                "mirror-08"
+              ],
+              "extraCards": [
+                "mirror-01",
+                "mirror-05"
+              ]
+            }
+          ]
+        }
+      ],
+      "plugins": [],
+      "counts": {
+        "curated": 26,
+        "fullBox": 38
+      }
+    },
+    {
+      "id": "friends",
+      "name": "朋友局",
+      "nameEn": "Friends",
+      "for": "熟悉的朋友聚会",
+      "players": "3–8",
+      "duration": "60–90 分钟",
+      "levelText": "★ – ★★★★（四星需全员同意）",
+      "playNotes": [
+        "把开场、热场和互看合为直接开聊，不单独聊天气",
+        "主流程建议抽 12–18 张：直接开聊 2–3 张、说点真话 3–4 张、故事与未来 6–10 张、收尾 1 张",
+        "可选加码或亲密插件占用同一晚的抽牌预算，加入后相应少抽前面阶段，不额外堆时长",
+        "可以按现场节奏点击阶段标签跳转；加码和亲密插件全员同意才进入",
+        "四星卡、四辣和五辣卡，翻开前仍需单卡同意"
+      ],
+      "notIncluded": [
+        "主流程不放五星卡：留给知己局",
+        "恋爱体检：不放入朋友牌池",
+        "高阶暗房和高阶钱包题：主要留给知己局",
+        "亲密题只在全员同意启用插件后出现，不要求关系中的另一人在场"
+      ],
+      "onlineTips": [],
+      "hints": [],
+      "closingText": "谢谢今晚的坦诚，下次见。",
+      "modes": [
+        {
+          "id": "standard",
+          "name": "标准",
+          "desc": "",
+          "stages": [
+            {
+              "id": "warmup",
+              "name": "直接开聊",
+              "howTo": "轮流抽，把最近的生活和彼此眼中的自己带上桌",
+              "minutes": "10–15 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "action-02",
+                "action-03",
+                "mirror-02",
+                "mirror-d01",
+                "imagination-01",
+                "imagination-02"
+              ],
+              "extraCards": [
+                "action-01",
+                "action-04",
+                "action-11",
+                "action-12",
+                "mirror-06",
+                "train-05",
+                "story-03"
+              ]
+            },
+            {
+              "id": "reveal",
+              "name": "说点真话",
+              "howTo": "轮流抽，聊自己的经历和想法；遇到三观卡时同时亮态度，少数派先说",
+              "minutes": "15–20 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "shadow-01",
+                "shadow-03",
+                "shadow-04",
+                "shadow-05",
+                "shadow-06",
+                "shadow-07",
+                "shadow-08",
+                "money-05",
+                "views-05",
+                "views-08"
+              ],
+              "extraCards": [
+                "shadow-02",
+                "money-06",
+                "money-08",
+                "views-d02"
+              ]
+            },
+            {
+              "id": "deep-talk",
+              "name": "故事与未来",
+              "howTo": "轮流抽，把时间留给过去的经历、现在的生活和未来的自己",
+              "minutes": "30–45 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "story-04",
+                "story-05",
+                "story-06",
+                "story-07",
+                "story-08",
+                "story-09",
+                "story-10",
+                "story-13",
+                "story-14",
+                "train-02",
+                "train-03",
+                "train-06",
+                "train-07",
+                "train-08",
+                "train-19",
+                "train-20",
+                "train-21",
+                "future-03",
+                "future-04",
+                "future-06"
+              ],
+              "extraCards": [
+                "story-01",
+                "story-02",
+                "future-01",
+                "future-02"
+              ]
+            },
+            {
+              "id": "level-up",
+              "name": "加码（可选）",
+              "howTo": "全员同意才开；有人不愿意，就跳到收尾",
+              "minutes": "10–20 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": true,
+              "requiresConsent": true,
+              "persistProgress": false,
+              "cards": [
+                "story-16",
+                "story-17",
+                "train-14",
+                "train-15",
+                "future-07",
+                "future-08"
+              ],
+              "extraCards": []
+            },
+            {
+              "id": "closing",
+              "name": "收尾",
+              "howTo": "选一张，所有人都答，说说今晚看见的彼此",
+              "minutes": "5–10 分钟",
+              "draw": "pick",
+              "everyoneAnswers": true,
+              "maxDraws": 1,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "mirror-08",
+                "mirror-03"
+              ],
+              "extraCards": [
+                "mirror-05",
+                "mirror-01"
+              ]
+            }
+          ]
+        }
+      ],
+      "plugins": [
+        {
+          "id": "intimacy-plugin",
+          "name": "亲密开麦插件",
+          "howTo": "全员同意才加，适合成年闺蜜局、兄弟局；聊各自经历、欲望和边界，不要求另一半在场；四辣、五辣翻开前再确认",
+          "minutes": "15–25 分钟",
+          "draw": "random",
+          "everyoneAnswers": false,
+          "maxDraws": null,
+          "optional": true,
+          "requiresConsent": true,
+          "persistProgress": false,
+          "cards": [
+            "intimacy-01",
+            "intimacy-02",
+            "intimacy-06",
+            "intimacy-08",
+            "intimacy-09",
+            "intimacy-10",
+            "intimacy-12",
+            "intimacy-15",
+            "intimacy-16",
+            "intimacy-19"
+          ],
+          "extraCards": [
+            "intimacy-03",
+            "intimacy-04",
+            "intimacy-05",
+            "intimacy-07",
+            "intimacy-d01",
+            "intimacy-d03"
+          ],
+          "insertAfter": "reveal"
+        }
+      ],
+      "counts": {
+        "curated": 44,
+        "fullBox": 61,
+        "plugin": {
+          "curated": 10,
+          "fullBox": 16
+        }
+      }
+    },
+    {
+      "id": "confidants",
+      "name": "知己局",
+      "nameEn": "Confidants",
+      "for": "2–4 个最信任的人，适合深夜",
+      "players": "2–4",
+      "duration": "60–90 分钟",
+      "levelText": "★★ – ★★★★★（五星一晚最多 1–2 张）",
+      "playNotes": [
+        "开场和镜子合成“看见近况”，不必先轮流报天气；所有阶段都可以按大家的意愿跳转。",
+        "建议一晚共抽 9–10 张：看见近况 2 张、讲述与暗房 5 张、行动 1 张、终局 1–2 张。卡池有余量，不必抽完。",
+        "四星及以上仍逐卡确认；行动、终局需要全员同意才进入。终局最多抽 2 张，所有人都答。",
+        "最后不抽卡：每人说一句“今晚我想记住的一句话”。"
+      ],
+      "notIncluded": [
+        "亲密开麦：留给朋友局插件或心动局",
+        "恋爱体检：留给心动局",
+        "不采用暗房深04、暗房深08；极端设定减少，更多从本人的经历、感受和行动出发"
+      ],
+      "onlineTips": [],
+      "hints": [],
+      "closingText": "每个人说一句“今晚我想记住的一句话”，然后结束。",
+      "modes": [
+        {
+          "id": "standard",
+          "name": "标准",
+          "desc": "把铺垫收短，把时间留给真实讲述；任何阶段都可以跳，深卡仍需确认。",
+          "stages": [
+            {
+              "id": "mirror",
+              "name": "看见近况",
+              "howTo": "轮流抽；从熟悉彼此的近况开始，被说的人先听完再回应；建议抽 2 张。",
+              "minutes": "8–12 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "mirror-06",
+                "mirror-09",
+                "mirror-d02",
+                "mirror-d03"
+              ],
+              "extraCards": [
+                "weather-05",
+                "weather-06",
+                "weather-12",
+                "mirror-07"
+              ]
+            },
+            {
+              "id": "telling",
+              "name": "讲述与暗房",
+              "howTo": "轮流抽，只说愿意说的；穿插少量三观与思想实验题，四星及以上逐卡确认；建议抽 5 张。",
+              "minutes": "30–45 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "shadow-04",
+                "shadow-d03",
+                "shadow-10",
+                "shadow-11",
+                "shadow-12",
+                "story-11",
+                "story-15",
+                "story-18",
+                "train-16",
+                "future-05",
+                "views-d04",
+                "views-d09"
+              ],
+              "extraCards": [
+                "shadow-06",
+                "shadow-07",
+                "shadow-09",
+                "shadow-d05",
+                "shadow-d09",
+                "train-11",
+                "train-12",
+                "train-13",
+                "money-14",
+                "views-12"
+              ]
+            },
+            {
+              "id": "action",
+              "name": "把话带出去",
+              "howTo": "全员同意后进入；读出草稿或描述照片，不必交代对象；建议抽 1 张。",
+              "minutes": "5–10 分钟",
+              "draw": "random",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": true,
+              "persistProgress": false,
+              "cards": [
+                "action-07",
+                "action-08"
+              ],
+              "extraCards": []
+            },
+            {
+              "id": "finale",
+              "name": "终局",
+              "howTo": "全员同意后进入；挑选 1–2 张，所有人都答；每张仍需单卡确认。",
+              "minutes": "10–15 分钟",
+              "draw": "pick",
+              "everyoneAnswers": true,
+              "maxDraws": 2,
+              "optional": false,
+              "requiresConsent": true,
+              "persistProgress": false,
+              "cards": [
+                "shadow-d11",
+                "story-20",
+                "train-18",
+                "action-09"
+              ],
+              "extraCards": [
+                "story-19",
+                "story-21",
+                "train-17",
+                "future-09",
+                "future-10",
+                "action-10",
+                "money-20"
+              ]
+            },
+            {
+              "id": "closing",
+              "name": "收尾",
+              "howTo": "不抽卡：每个人说一句“今晚我想记住的一句话”，说完就结束。",
+              "minutes": "3–5 分钟",
+              "draw": "none",
+              "everyoneAnswers": false,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [],
+              "extraCards": []
+            }
+          ]
+        }
+      ],
+      "plugins": [],
+      "counts": {
+        "curated": 22,
+        "fullBox": 43
+      }
+    },
+    {
+      "id": "partners",
+      "name": "心动局",
+      "nameEn": "Heart to Heart",
+      "for": "两位互有好感、正在暧昧的人，或已经交往的男女朋友；选适合当下关系的玩法",
+      "players": "2",
+      "duration": "暧昧版 30–45 分钟／恋人版 45–75 分钟",
+      "levelText": "暧昧版 ★–★★，可选 1–3 辣；恋人版 ★–★★★★★，可选 3–5 辣",
+      "playNotes": [
+        "暧昧版聊偏好、经历和彼此印象，不要求确认关系；恋人版聊相处细节和真实需要，不需要婚姻或同居经历。",
+        "两个人都答同一张卡，每张轮流由不同的人先答；建议一局共抽 6–10 张，聊开就不急着换题。",
+        "每个阶段都可以少抽、直接跳过或回到前一阶段；建议抽数只作参考，不是抽牌上限。",
+        "亲密阶段是可选环节，只有两个人都同意才进入；只聊感受和想法，不要求任何现实行动。",
+        "四星、四辣以上仍要两个人同意才翻开；五辣卡只听，不辩解。",
+        "听的人先复述一遍“你是说……”，再回应；正在吵架的时候先暂停游戏。",
+        "看到“伴侣”字样时，恋人版指正在交往的对方；暧昧版的问题按自己的经历、感受或假设回答，不代表已经确立关系。"
+      ],
+      "notIncluded": [
+        "夫妻共同财务、婚后分工和同居多年的磨合",
+        "暧昧版不做关系体检，也不要求回顾两个人已有的性生活"
+      ],
+      "onlineTips": [],
+      "hints": [
+        {
+          "match": [
+            "在场",
+            "右手边",
+            "左手边"
+          ],
+          "hint": "两个人玩：卡上的“在场的人”“左手边”“右手边”，都指一起玩的人。"
+        },
+        {
+          "match": [
+            "大家"
+          ],
+          "hint": "两个人玩：“大家”换成“一起玩的对方”。"
+        },
+        {
+          "series": "checkup",
+          "hint": "恋人版：卡上的“伴侣”指正在交往的对方，不要求已经结婚或同居。"
+        },
+        {
+          "series": "intimacy",
+          "hint": "暧昧版只聊自己的感受、经历和边界，不代表已经确立关系；恋人版里的“我”“我们”，指一起玩的两个人。"
+        }
+      ],
+      "closingText": "心动局先到这里，谢谢你让我多认识你一点。",
+      "modes": [
+        {
+          "id": "daily",
+          "name": "暧昧版",
+          "desc": "适合互有好感、还没确认关系的两个人；约 30–45 分钟，建议共抽 6–10 张；亲密阶段可选。",
+          "stages": [
+            {
+              "id": "light",
+              "name": "轻松聊聊",
+              "howTo": "建议抽 2–3 张。聊偏好和自己的经历，彼此接话；想直接靠近一点，也可以点击其他阶段。",
+              "minutes": "8–12 分钟",
+              "draw": "random",
+              "everyoneAnswers": true,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "imagination-01",
+                "imagination-02",
+                "imagination-09",
+                "story-02",
+                "story-03",
+                "story-06",
+                "train-04",
+                "future-02"
+              ],
+              "extraCards": [
+                "imagination-04",
+                "imagination-07",
+                "story-01",
+                "story-07",
+                "story-08",
+                "action-03",
+                "action-04",
+                "train-02",
+                "future-04"
+              ]
+            },
+            {
+              "id": "getting-closer",
+              "name": "慢慢靠近",
+              "howTo": "建议抽 3–4 张。聊自己的故事，也猜猜对方的想法；两个人都答，先听完再回应。可以少抽、继续聊，或直接跳到收尾。",
+              "minutes": "12–18 分钟",
+              "draw": "random",
+              "everyoneAnswers": true,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "story-09",
+                "train-06",
+                "train-08",
+                "mirror-03",
+                "mirror-04",
+                "mirror-06",
+                "mirror-d01",
+                "mirror-d03"
+              ],
+              "extraCards": [
+                "mirror-02",
+                "mirror-07",
+                "mirror-d02",
+                "imagination-10",
+                "imagination-11",
+                "imagination-12",
+                "shadow-01",
+                "shadow-03",
+                "shadow-04",
+                "shadow-08",
+                "train-03",
+                "train-07"
+              ]
+            },
+            {
+              "id": "intimacy",
+              "name": "聊点心动（可选）",
+              "howTo": "只有两个人都同意才进入，建议抽 1–2 张，计入一局总数。聊好感、身体感受和边界，不要求已经恋爱，也不代表同意任何现实行动；不想聊就直接收尾。",
+              "minutes": "8–12 分钟",
+              "draw": "random",
+              "everyoneAnswers": true,
+              "maxDraws": null,
+              "optional": true,
+              "requiresConsent": true,
+              "persistProgress": false,
+              "cards": [
+                "intimacy-01",
+                "intimacy-02",
+                "intimacy-03",
+                "intimacy-04",
+                "intimacy-06",
+                "intimacy-07",
+                "intimacy-12",
+                "intimacy-15",
+                "intimacy-d01"
+              ],
+              "extraCards": [
+                "intimacy-08",
+                "intimacy-d02"
+              ]
+            },
+            {
+              "id": "closing",
+              "name": "留下一句",
+              "howTo": "建议选 1 张，留下一点欣赏或期待；不要求表白、确认关系或作承诺。愿意继续，也可以再选。",
+              "minutes": "3–5 分钟",
+              "draw": "pick",
+              "everyoneAnswers": true,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "mirror-08",
+                "train-05",
+                "future-01",
+                "future-03"
+              ],
+              "extraCards": []
+            }
+          ]
+        },
+        {
+          "id": "night",
+          "name": "恋人版",
+          "desc": "适合已经交往的男女朋友；约 45–75 分钟，建议共抽 6–10 张；不需要同居或婚姻经历。",
+          "stages": [
+            {
+              "id": "warm-talk",
+              "name": "恋爱日常",
+              "howTo": "建议抽 2–3 张。从相处的小事和彼此的偏好聊起，两个人都答；不必报天气，也可以直接去聊更想说的话。",
+              "minutes": "10–15 分钟",
+              "draw": "random",
+              "everyoneAnswers": true,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "checkup-01",
+                "checkup-02",
+                "checkup-11",
+                "mirror-04",
+                "mirror-07",
+                "mirror-d02",
+                "story-09",
+                "future-11"
+              ],
+              "extraCards": [
+                "action-03",
+                "action-04",
+                "action-12",
+                "train-04",
+                "train-06",
+                "train-08",
+                "future-03",
+                "imagination-09"
+              ]
+            },
+            {
+              "id": "deep",
+              "name": "更懂彼此",
+              "howTo": "建议抽 3–4 张。体检题改为随机聊，不按清单检查；聊相处细节、需要和没说开的话。四星以上逐张确认，可以少抽、继续聊，或跳过。",
+              "minutes": "20–30 分钟",
+              "draw": "random",
+              "everyoneAnswers": true,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "checkup-03",
+                "checkup-04",
+                "checkup-05",
+                "checkup-06",
+                "checkup-07",
+                "checkup-08",
+                "mirror-d05",
+                "mirror-12"
+              ],
+              "extraCards": [
+                "checkup-09",
+                "checkup-10"
+              ]
+            },
+            {
+              "id": "intimacy-deep",
+              "name": "亲密开麦（可选）",
+              "howTo": "只有两个人都同意才进入，建议抽 1–2 张，计入一局总数。聊当下两个人的身体、欲望和感受，只说不做；四辣、五辣逐张确认，五辣卡只听不辩解。",
+              "minutes": "12–20 分钟",
+              "draw": "random",
+              "everyoneAnswers": true,
+              "maxDraws": null,
+              "optional": true,
+              "requiresConsent": true,
+              "persistProgress": false,
+              "cards": [
+                "intimacy-11",
+                "intimacy-13",
+                "intimacy-14",
+                "intimacy-18",
+                "intimacy-20",
+                "intimacy-21",
+                "intimacy-d04",
+                "intimacy-d06",
+                "intimacy-d07",
+                "intimacy-d08",
+                "intimacy-d09",
+                "intimacy-d12"
+              ],
+              "extraCards": [
+                "intimacy-17",
+                "intimacy-d05",
+                "intimacy-d10"
+              ]
+            },
+            {
+              "id": "closing",
+              "name": "留下一句",
+              "howTo": "建议选 1 张，留下一点欣赏或期待；不用给关系打分，也不必当场开出改变清单。愿意继续，也可以再选。",
+              "minutes": "3–5 分钟",
+              "draw": "pick",
+              "everyoneAnswers": true,
+              "maxDraws": null,
+              "optional": false,
+              "requiresConsent": false,
+              "persistProgress": false,
+              "cards": [
+                "mirror-03",
+                "mirror-08",
+                "train-05",
+                "future-01"
+              ],
+              "extraCards": []
+            }
+          ]
+        }
+      ],
+      "plugins": [],
+      "counts": {
+        "daily": {
+          "curated": 29,
+          "fullBox": 52
+        },
+        "night": {
+          "curated": 32,
+          "fullBox": 45
+        }
+      }
+    },
+    {
+      "id": "solo",
+      "name": "独处局",
+      "nameEn": "Solo",
+      "for": "一个人写日记，每天一张",
+      "players": "1",
+      "duration": "每天 10–15 分钟",
+      "levelText": "按周循序渐进",
+      "playNotes": [
+        "每天：先写今天的天气，再抽 1 张主卡；写完加一句“今天发现的自己”",
+        "第 1 周 ★–★★，第 2 周 ★★–★★★，第 3 周 ★★★–★★★★，第 4 周起工作日 ★★★–★★★★、周末 ★★★★★",
+        "一周轮换：周一未来信箱、周二生命列车、周三暗房显影、周四钱包开麦、周五此刻任务、周六故事胶囊、周日三观蹦迪 + 一周天气图",
+        "卡面上的“给大家看”“讲给大家听”，一律换成“写下来”"
+      ],
+      "notIncluded": [
+        "你我镜像：需要别人",
+        "恋爱体检、亲密开麦：有伴侣的人可以先自己写，再找时间和伴侣聊"
+      ],
+      "onlineTips": [],
+      "hints": [
+        {
+          "match": [
+            "大家",
+            "在场"
+          ],
+          "hint": "一个人玩：写下来就好"
+        }
+      ],
+      "closingText": "今天发现的自己，写下来了吗？",
+      "modes": [],
+      "plugins": [],
+      "soloPlan": {
+        "openingCards": [
+          "weather-01",
+          "weather-11"
+        ],
+        "weekdaySeries": {
+          "1": "future",
+          "2": "train",
+          "3": "shadow",
+          "4": "money",
+          "5": "action",
+          "6": "story",
+          "0": "views"
+        },
+        "weekdayNote": "键是 JavaScript 的 getDay()，0 表示周日",
+        "sundayExtra": "weather-12",
+        "weekLevels": [
+          {
+            "week": 1,
+            "levels": [
+              1,
+              2
+            ]
+          },
+          {
+            "week": 2,
+            "levels": [
+              2,
+              3
+            ]
+          },
+          {
+            "week": 3,
+            "levels": [
+              3,
+              4
+            ]
+          },
+          {
+            "week": 4,
+            "levels": [
+              3,
+              4
+            ],
+            "weekendLevels": [
+              5
+            ],
+            "note": "第 4 周及以后都按这一条"
+          }
+        ],
+        "levelFallback": "如果当天的系列没有对应级别的卡，就用最接近的级别",
+        "eligibleSeries": [
+          "weather",
+          "future",
+          "train",
+          "story",
+          "shadow",
+          "money",
+          "action",
+          "views",
+          "imagination"
+        ]
+      },
+      "counts": {
+        "eligible": 161
+      }
+    }
+  ]
+}

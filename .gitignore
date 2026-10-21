@@ -1,0 +1,11 @@
+# 系统杂项
+.DS_Store
+__MACOSX/
+
+# 本机环境与测试产物
+.env
+.env.*
+!.env.example
+.playwright-cli/
+test-results/
+playwright-report/

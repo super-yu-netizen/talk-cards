@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171c1e">
+  <title>对话卡牌 · 把时间留给彼此</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="table-fx.css">
+</head>
+<body>
+  <header class="site-header">
+    <button class="brand" id="home-button" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>对话卡牌 <small>THE CONVERSATION DECK</small></span>
+    </button>
+    <div class="header-tools"><span class="local-badge"><i></i> 只在此刻，只在本机</span><button class="icon-button" id="projection-button" aria-label="开启投屏大字模式" title="投屏大字模式">Aa</button></div>
+  </header>
+  <main id="app" tabindex="-1"></main>
+  <footer class="site-footer"><span>一张卡，一个慢下来的理由。</span><span>离线可用 · 记录仅保存在当前浏览器</span></footer>
+  <dialog id="confirm-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-symbol" aria-hidden="true">✦</div><h2 id="dialog-title"></h2><p id="dialog-message"></p>
+    <div class="dialog-actions"><button id="dialog-no" class="button secondary"></button><button id="dialog-yes" class="button primary"></button></div>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="data/game-data.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/table-fx.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
